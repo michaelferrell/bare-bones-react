@@ -1,0 +1,19 @@
+{
+  "name": "bare-bones-react",
+  "version": "1.0.0",
+  "description": "A lightweight flex-box grid system for developing reacts applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelferrell/bare-bones-react.git"
+  },
+  "author": "Michael Ferrell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelferrell/bare-bones-react/issues"
+  },
+  "homepage": "https://github.com/michaelferrell/bare-bones-react#readme"
+}
