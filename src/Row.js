@@ -1,7 +1,8 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 
-const FlexRow = styled.div`
+const StyledRow = styled.div`
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -13,4 +14,10 @@ const FlexRow = styled.div`
   white-space: no-wrap;
 `
 
-export default ({ children }) => <FlexRow>{children}</FlexRow>
+const Row = ({ children }) => <StyledRow>{children}</StyledRow>
+
+Row.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+}
+
+export default Row

@@ -1,12 +1,13 @@
 {
   "name": "bare-bones-react",
   "version": "1.0.0",
-  "description": "A lightweight flex-box grid system for developing reacts applications",
+  "description": "A lightweight flex-box grid system for developing react with styled component applications",
   "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "dev": "webpack-dev-server --config webpack.config-dev.js --mode development"
+    "build": "webpack --config ./webpack/webpack.config.js --mode production",
+    "demo": "webpack --config ./webpack/webpack.config-demo.js --mode none",
+    "dev": "webpack-dev-server --config ./webpack/webpack.config-dev.js --mode development"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "styled-components": "^3.4.5"

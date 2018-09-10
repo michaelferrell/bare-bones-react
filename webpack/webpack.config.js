@@ -2,10 +2,11 @@ const webpack = require("webpack")
 const path = require("path")
 
 const config = {
-  entry: "./src/index.js",
+  entry: path.join(__dirname, "..", "src"),
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "main.js"
+    path: path.join(__dirname, "..", "dist"),
+    filename: "main.js",
+    libraryTarget: "umd"
   },
   resolve: {
     extensions: [".js"]

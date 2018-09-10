@@ -1,10 +1,11 @@
 import React from "react"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 import { getTextAlign } from "./helpers"
 import { MOBILE_SIZE, COLUMN_PADDING } from "./constants"
 import { ResponsiveImage } from "./mixins"
 
-const FlexColumn = styled.div`
+const StyledColumn = styled.div`
   box-sizing: border-box;
   position: relative;
   min-height: 1px;
@@ -18,7 +19,7 @@ const FlexColumn = styled.div`
     if (props.unpadded) {
       return "0"
     } else if (props.padding) {
-      return padding
+      return props.padding
     } else {
       return COLUMN_PADDING
     }
@@ -35,6 +36,17 @@ const FlexColumn = styled.div`
   ${ResponsiveImage};
 `
 
-export default ({ children, ...props }) => (
-  <FlexColumn {...props}>{children}</FlexColumn>
+const Column = ({ children, ...props }) => (
+  <StyledColumn {...props}>{children}</StyledColumn>
 )
+
+Column.propTypes = {
+  children: PropTypes.any,
+  width: PropTypes.number,
+  textAlign: PropTypes.string,
+  unpadded: PropTypes.bool,
+  padding: PropTypes.string,
+  offset: PropTypes.number
+}
+
+export default Column

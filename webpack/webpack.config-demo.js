@@ -2,10 +2,11 @@ const webpack = require("webpack")
 const path = require("path")
 
 const config = {
-  entry: "./dev-server/entry.js",
+  entry: path.join(__dirname, "..", "demo", "entry.js"),
   output: {
-    path: path.resolve(__dirname, "dev-server"),
-    filename: "main.js"
+    path: path.join(__dirname, "..", "demo"),
+    filename: "main.js",
+    libraryTarget: "umd"
   },
   resolve: {
     extensions: [".js"]
@@ -21,14 +22,7 @@ const config = {
         ]
       }
     ]
-  },
-  devServer: {
-    port: 9000,
-    hot: true,
-    inline: true,
-    contentBase: path.resolve(__dirname, "dev-server")
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  }
 }
 
 module.exports = config
